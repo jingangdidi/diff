@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>highlight diff</title>
+    <style>
+body {
+  width: 100%;
+  height: auto;
+  margin: 0px;
+}
+.heading {
+  background-color: #fcd143;
+  margin: 0;
+  padding: 1rem;
+  max-width: 100%;
+  text-align: center;
+  border-bottom-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  font-family: 'Heebo', sans-serif;
+  margin-block-start: 0rem;
+  margin-block-end: 0rem;
+}
+code {
+  display: block;
+  text-align: left;
+  white-space: pre-line;
+  position: relative;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 0.5;
+  background-color: #696969;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 5px;
+  color: #FFFFFF;
+  font-size: 18px;
+}
+pre {
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+  border: 1px solid rgba(0,0,0,0);
+  border-radius: 5px;
+}
+pre:hover {
+  border: 1px solid white;
+}
+.left {
+  background-color: #FF6347;
+}
+.both {
+  background-color: #696969;
+}
+.right {
+  background-color: #3CB371;
+}
+    </style>
+</head>
+<body>
+    <div>
+        <h1 class='heading'>highlight diff</h1>
+    </div>
+    <div>
+        <code>
+            <pre class='both'>1      1      | use argh::FromArgs;</pre>
+            <pre class='both'>2      2      | use flate2::read::GzDecoder;</pre>
+            <pre class='both'>3      3      | use std::path::{Path, PathBuf};</pre>
+            <pre class='both'>4      4      | </pre>
+            <pre class='left'>5    -        | #[derive(Debug)]</pre>
+            <pre class='both'>6      5      | enum Restype {</pre>
+            <pre class='both'>7      6      | 	/// print in terminal</pre>
+            <pre class='both'>8      7      | 	Terminal,</pre>
+            <pre class='both'>9      8      | 	/// save as txt</pre>
+            <pre class='both'>10     9      | 	Txt,</pre>
+            <pre class='both'>11     10     | 	/// save as html</pre>
+            <pre class='both'>12     11     | 	Html,</pre>
+            <pre class='both'>13     12     | }</pre>
+            <pre class='both'>14     13     | </pre>
+            <pre class='both'>15     14     | fn main() {</pre>
+            <pre class='both'>16     15     | 	let left = fs::read_to_string(&parsed_paras.old).expect("read -a failed");</pre>
+            <pre class='left'>17   -        | 	let right = fs::read_to_string(&parsed_paras.new).expect("read -b failed");</pre>
+            <pre class='left'>18   -        | 	let result = lines(left, right);</pre>
+            <pre class='right'>       16   + | 	let result = lines(&left, &right);</pre>
+            <pre class='both'>19     17     | 	let mut left_number: usize = 0;</pre>
+            <pre class='both'>20     18     | 	let mut right_number: usize = 0;</pre>
+            <pre class='both'>21     19     | 	let width = parsed_paras.width;</pre>
+            <pre class='both'>22     20     | }</pre>
+            <pre class='both'>23     21     | </pre>
+        </code>
+    </div>
+</body>
+</html>
