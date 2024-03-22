@@ -1,0 +1,24 @@
+1      1      | use argh::FromArgs;
+2      2      | use flate2::read::GzDecoder;
+3      3      | use std::path::{Path, PathBuf};
+4      4      | 
+5    -        | #[derive(Debug)]
+6      5      | enum Restype {
+7      6      | 	/// print in terminal
+8      7      | 	Terminal,
+9      8      | 	/// save as txt
+10     9      | 	Txt,
+11     10     | 	/// save as html
+12     11     | 	Html,
+13     12     | }
+14     13     | 
+15     14     | fn main() {
+16     15     | 	let left = fs::read_to_string(&parsed_paras.old).expect("read -a failed");
+17   -        | 	let right = fs::read_to_string(&parsed_paras.new).expect("read -b failed");
+18   -        | 	let result = lines(left, right);
+       16   + | 	let result = lines(&left, &right);
+19     17     | 	let mut left_number: usize = 0;
+20     18     | 	let mut right_number: usize = 0;
+21     19     | 	let width = parsed_paras.width;
+22     20     | }
+23     21     | 
