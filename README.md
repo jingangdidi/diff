@@ -1,7 +1,7 @@
 # diff
 diff two file, show in terminal, save as txt or html
 
-# Args
+### Args
 ```rust
 Usage: dif2 [-a <old>] [-b <new>] [-r <res>] [-c <color>] [-w <width>] [-t <batch>] [-d] [-n <outname>] [-o <outpath>]
 
@@ -21,3 +21,15 @@ Options:
   -o, --outpath     outpath, default: ./
   --help            display usage information
 ```
+### Example
+1. print in terminal
+   ```shell
+   dif -a test1.rs -b test2.rs
+   ```
+2. save as txt
+   ```shell
+   dif -a test1.rs -b test2.rs -r txt
+3. save as html
+   ```shell
+   dif -a test1.rs -b test2.rs -r html
+   ```
